@@ -1,0 +1,1 @@
+export { IConfigFile } from './IConfigFile'
