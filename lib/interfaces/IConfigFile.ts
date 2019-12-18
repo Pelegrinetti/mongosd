@@ -1,5 +1,5 @@
 export interface IConfigFile {
-  modelPath: string
+  modelsPath: string
   seedersPath: string
   dbUri: string
 }
