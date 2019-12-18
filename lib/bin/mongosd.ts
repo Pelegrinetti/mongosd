@@ -12,7 +12,7 @@ import { ISeeder } from '../interfaces'
 
 const arg = process.argv[2]
 
-if (arg === '--init') {
+if (arg === 'init') {
   const loader = ora('Initializing...').start()
 
   setTimeout(() => {
