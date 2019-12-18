@@ -36,8 +36,6 @@
     "@types/mongoose": "^5.5.34"
   },
   "dependencies": {
-    "@types/async": "^3.0.3",
-    "async": "^3.1.0",
     "mongoose": "^5.8.1",
     "ora": "^4.0.3"
   }
