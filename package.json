@@ -15,7 +15,8 @@
   ],
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "tsc --build"
+    "build": "tsc --build",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@types/node": "^12.12.17",
