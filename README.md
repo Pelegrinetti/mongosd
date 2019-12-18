@@ -38,3 +38,7 @@ Run seeders in database:
 - ```node_modules/.bin/mongosd seeder:run```
 
 You can run all seeders again with ```--all``` flag. Example: ```node_modules/.bin/mongosd seeder:run --all```
+
+## Roadmap:
+- Add tests
+- Add CI
