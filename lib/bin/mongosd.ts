@@ -34,7 +34,7 @@ if (arg === 'init') {
   }, 1000)
 }
 
-if (arg === 'db:create') {
+if (arg === 'seeder:create') {
   const loader = ora('Creating...')
 
   if (process.argv[3]) {
@@ -74,7 +74,7 @@ if (arg === 'db:create') {
   }
 }
 
-if (arg === 'db:run') {
+if (arg === 'seeder:run') {
   const configFile = getConfigFile()
 
   if (process.argv[3] === '--all') {
