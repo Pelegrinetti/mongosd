@@ -1,4 +1,6 @@
 import mongoose from 'mongoose'
+import { existsSync } from 'fs'
+import * as path from 'path'
 
 import { getConfigFile } from '../utils'
 
@@ -13,7 +15,9 @@ mongoose.connect(
   },
   error => {
     if (error) {
-      console.log(`> Can't connect to database: ${error.message}`)
+      if (existsSync(path.join(process.cwd(), 'mongosd.json'))) {
+        console.log(`> Can't connect to database: ${error.message}`)
+      }
     }
   }
 )

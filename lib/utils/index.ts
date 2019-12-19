@@ -5,9 +5,13 @@ import { Model, Document } from 'mongoose'
 import { IConfigFile } from '../interfaces'
 
 export function getConfigFile(): IConfigFile {
-  return JSON.parse(
-    fs.readFileSync(path.join(process.cwd(), 'mongosd.json')).toString()
-  )
+  if (fs.existsSync(path.join(process.cwd(), 'mongosd.json'))) {
+    return JSON.parse(
+      fs.readFileSync(path.join(process.cwd(), 'mongosd.json')).toString()
+    )
+  } else {
+    return { modelsPath: '', seedersPath: '', dbUri: '' }
+  }
 }
 
 export async function register(model: Model<Document>, data: Array<Object>) {
