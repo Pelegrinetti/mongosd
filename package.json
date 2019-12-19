@@ -1,6 +1,6 @@
 {
   "name": "mongosd",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "main": "dist/index.js",
   "repository": "https://github.com/Pelegrinetti/mongosd",
   "author": "Pelegrinetti <pelegrinetti.dev@gmail.com>",

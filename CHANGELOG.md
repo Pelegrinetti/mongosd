@@ -1,9 +1,17 @@
 # Changelog
 All changes is here!
 
+## [1.0.6] - 2019-12-18
+### Removed:
+- Removed lib folder to package.
+
+## [1.0.5] - 2019-12-19
+### Fixed:
+- Create recursive folders for seeders.
+
 ## [1.0.4] - 2019-12-18
 ### Fixed:
-- Errro while create a new seeder without templates.
+- Error while create a new seeder without templates.
 
 ## [1.0.3] - 2019-12-18
 ### Fixed:
