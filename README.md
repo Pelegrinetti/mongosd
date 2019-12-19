@@ -3,7 +3,7 @@ A simple seeder for Mongoose.
 
 
 ## Installation:
-Run ```yarn add mongosd``` or ```npm install mongosd```
+Run ```yarn add mongosd -D``` or ```npm install mongosd --save-dev```
 
 ## How to use:
 
@@ -42,3 +42,4 @@ You can run all seeders again with ```--all``` flag. Example: ```node_modules/.b
 ## Roadmap:
 - Add tests
 - Add CI
+- Add ES6 modules support
