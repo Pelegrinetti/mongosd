@@ -40,33 +40,38 @@ if (arg === 'seeder:create') {
   if (process.argv[3]) {
     const configFile = getConfigFile()
 
-    fs.mkdir(path.join(process.cwd(), configFile.seedersPath), err => {
-      if (err) {
-        if (err.code !== 'EEXIST') {
-          console.log(
-            `> Error while creating seeders directory: ${err.message}`
-          )
-          process.exit(1)
-        }
-      }
-    })
-    fs.writeFile(
-      path.join(
-        process.cwd(),
-        configFile.seedersPath,
-        `${Date.now()}-${process.argv[3]}.js`
-      ),
-      fs.readFileSync(
-        path.resolve(__dirname, '..', '..', 'lib', 'templates', 'Seeder.txt')
-      ),
+    fs.mkdir(
+      path.join(process.cwd(), configFile.seedersPath),
+      { recursive: true },
       err => {
         if (err) {
-          console.log(`> Error while write seeder: ${err.message}`)
-          process.exit(1)
+          if (err.code !== 'EEXIST') {
+            console.log(
+              `> Error while creating seeders directory: ${err.message}`
+            )
+            process.exit(1)
+          }
         }
 
-        loader.succeed('Success!')
-        process.exit(0)
+        fs.writeFile(
+          path.join(
+            process.cwd(),
+            configFile.seedersPath,
+            `${Date.now()}-${process.argv[3]}.js`
+          ),
+          fs.readFileSync(
+            path.resolve(__dirname, '..', 'templates', 'Seeder.txt')
+          ),
+          err => {
+            if (err) {
+              console.log(`> Error while write seeder: ${err.message}`)
+              process.exit(1)
+            }
+
+            loader.succeed('Success!')
+            process.exit(0)
+          }
+        )
       }
     )
   } else {
