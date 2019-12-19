@@ -16,9 +16,11 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc --build",
+    "postbuild": "cp -r lib/templates dist/.",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
+    "@types/mongoose": "^5.5.34",
     "@types/node": "^12.12.17",
     "@typescript-eslint/eslint-plugin": "^2.11.0",
     "@typescript-eslint/parser": "^2.11.0",
@@ -32,8 +34,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.0",
-    "typescript": "^3.7.3",
-    "@types/mongoose": "^5.5.34"
+    "typescript": "^3.7.3"
   },
   "dependencies": {
     "mongoose": "^5.8.1",
