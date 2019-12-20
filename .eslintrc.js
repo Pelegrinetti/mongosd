@@ -1,11 +1,13 @@
 module.exports = {
   env: {
     es6: true,
-    node: true
+    node: true,
+    'jest/globals': true
   },
   extends: [
     'standard',
-    'prettier'
+    'prettier',
+    'plugin:jest/recommended'
   ],
   globals: {
     Atomics: 'readonly',
@@ -18,7 +20,8 @@ module.exports = {
   },
   plugins: [
     '@typescript-eslint',
-    'prettier'
+    'prettier',
+    'jest'
   ],
   rules: {
     'prettier/prettier': 'error',
