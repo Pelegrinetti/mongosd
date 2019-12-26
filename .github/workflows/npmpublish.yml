@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-          registry-url: https://registry.npmjs.org/:_authToken=${NPM_TOKEN}
+          registry-url: https://registry.npmjs.org/:_authToken=${{secrets.NPM_TOKEN}}
       - name: Starting MongoDB
         run: sudo docker run --name mongodb -p 27017:27017 -d mongo
       - name: Running NPM CI
