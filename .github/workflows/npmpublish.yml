@@ -1,0 +1,36 @@
+name: MongoSD Package
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm ci
+      - run: npm test
+
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - name: Starting MongoDB
+        run: sudo docker run --name mongodb -p 27017:27017 -d mongo
+      - name: Running NPM CI
+        run: npm ci
+      - name: Publishing package
+        run: npm publish
+        env:
+          MODELS_PATH: __tests__/case/models
+          SEEDERS_PATH: __tests__/case/seeders
+          DB_URI: mongodb://127.0.0.1/mongosd
