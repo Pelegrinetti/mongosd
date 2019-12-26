@@ -1,5 +1,4 @@
-[![Actions Status](https://github.com/Pelegrinetti/mongosd/workflows/MongoSD%20Package/badge.svg)](https://github.com/Pelegrinetti/mongosd/actions?query=workflow%3A"
-MongoSD+Package")
+![Actions Status](https://github.com/Pelegrinetti/mongosd/workflows/MongoSD%20Package/badge.svg)
 
 # MongoSD - Mongoose Seeder
 
