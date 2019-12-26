@@ -1,4 +1,5 @@
-![](https://github.com/Pelegrinetti/mongosd/workflows/.github/workflows/npmpublish.yml/badge.svg)
+[![Actions Status](https://github.com/Pelegrinetti/mongosd/workflows/MongoSD%20Package/badge.svg)](https://github.com/Pelegrinetti/mongosd/actions?query=workflow%3A"
+MongoSD+Package")
 
 # MongoSD - Mongoose Seeder
 
