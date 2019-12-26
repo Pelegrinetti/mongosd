@@ -1,6 +1,8 @@
 name: MongoSD Package
 
-on: [push]
+on:
+  release:
+    types: [published, created, edited]
 
 jobs:
   build:
