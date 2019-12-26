@@ -2,6 +2,12 @@
 
 All changes is here!
 
+## [1.1.7] - 2019-12-26
+
+### Fix:
+
+- CI Badge
+
 ## [1.1.6] - 2019-12-26
 
 ### Added:
