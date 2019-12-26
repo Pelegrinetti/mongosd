@@ -19,7 +19,7 @@
     "postbuild": "cp -r lib/templates dist/.",
     "prepublishOnly": "npm run build",
     "pretest": "npm run build",
-    "test": "jest --detectOpenHandles"
+    "test": "jest --detectOpenHandles --force-exit"
   },
   "devDependencies": {
     "@types/jest": "^24.0.24",
