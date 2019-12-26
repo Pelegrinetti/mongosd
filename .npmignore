@@ -3,3 +3,6 @@ example
 lib
 
 __tests__
+
+.env
+.env.example
