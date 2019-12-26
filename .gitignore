@@ -105,3 +105,8 @@ dist
 
 # Example folder
 example/
+
+# Test Case seeders
+__tests__/case/*
+!__tests__/case/models
+mongosd.json
