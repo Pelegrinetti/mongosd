@@ -49,6 +49,4 @@ You can run all seeders again with `--all` flag. Example: `node_modules/.bin/mon
 
 ## Roadmap:
 
-- Add tests
-- Add CI
 - Add ES6 modules support
