@@ -10,13 +10,19 @@ beforeAll(async done => {
 })
 
 describe('MongoSD tests', () => {
-  it('should init mongosd', () => {
+  it('should init mongosd', async () => {
     const result = exec('node dist/bin/mongosd init')
 
-    result.on('exit', async code => {
-      await setMongoSDConfig
-      expect(code).toBe(0)
-    })
+    return setMongoSDConfig
+      .then(() => {
+        result.on('exit', code => {
+          expect(code).toBe(0)
+        })
+      })
+      .catch(err => {
+        console.log(`> Error: ${err.message}`)
+        process.exit(1)
+      })
   })
 
   it('should create foo seeder', () => {
@@ -32,7 +38,22 @@ describe('MongoSD tests', () => {
 
     result.on('exit', code => {
       expect(code).toBe(1)
-      process.kill(-result.pid)
+    })
+  })
+
+  it('should run seeders', () => {
+    const result = exec('node dist/bin/mongosd seeder:run')
+
+    result.on('exit', code => {
+      expect(code).toBe(0)
+    })
+  })
+
+  it('should run seeders all seeders again', () => {
+    const result = exec('node dist/bin/mongosd seeder:run --all')
+
+    result.on('exit', code => {
+      expect(code).toBe(0)
     })
   })
 })
